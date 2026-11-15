@@ -1,0 +1,429 @@
+.profile-page{
+    padding: 60px 7%;
+    background:
+        radial-gradient(
+        circle at center,
+        #f5f5f5 0%,
+        #efefef 45%,
+        #ebebeb 100%
+        );
+    min-height: 100vh;
+}
+.profile-container{
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+}
+.profile-sidebar{
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(15px);
+    border-radius: 32px;
+    padding: 35px;
+    height: fit-content;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+}
+.profile-sidebar h2{
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+.profile-tab{
+    width: 100%;
+    height: 62px;
+    border: none;
+    border-radius: 18px;
+    background: #f4f4f4;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 0 22px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-weight: 600;
+}
+.profile-tab.active{
+    background:
+        linear-gradient(
+        135deg,
+        #f5d487,
+        #d4af37
+        );
+}
+.profile-card,
+.password-card,
+.order-table-wrapper{
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(15px);
+    border-radius: 32px;
+    padding: 40px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+.profile-header{
+    display: grid;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+.profile-basic{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.avatar-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
+.avatar-section img{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+.avatar-section button{
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 14px;
+    background:
+        linear-gradient(
+        135deg,
+        #f5d487,
+        #d4af37
+        );
+    font-weight: 700;
+    cursor: pointer;
+}
+.profile-grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 25px;
+}
+.full-width{
+    grid-column: span 2;
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.form-group label{
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+}
+.form-group input,
+.form-group textarea{
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 16px;
+    background: white;
+    padding: 18px 22px;
+    font-size: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+}
+.form-group textarea{
+    min-height: 120px;
+    resize: none;
+}
+.save-btn{
+    margin-top: 30px;
+    width: 240px;
+    height: 58px;
+    border: none;
+    border-radius: 999px;
+    background:
+        linear-gradient(
+        135deg,
+        #f5d487,
+        #d4af37
+        );
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.save-btn:hover{
+    transform: translateY(-4px);
+}
+.order-table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.order-table th{
+    background: #f3f3f3;
+    padding: 18px;
+    text-align: left;
+}
+.order-table td{
+    padding: 20px 18px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.edit-order-btn{
+    width: 100px;
+    height: 42px;
+    border: none;
+    border-radius: 12px;
+    background:
+        linear-gradient(
+        135deg,
+        #f5d487,
+        #d4af37
+        );
+    cursor: pointer;
+    font-weight: 600;
+}
+.modal {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(6px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    z-index: 9999;
+    animation: fadeIn 0.35s ease;
+}
+.modal.show {
+    display: flex;
+}
+.modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 950px;
+    max-height: 92vh;
+    overflow-y: auto;
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f9f9f7
+        );
+    border-radius: 28px;
+    padding: 45px 42px;
+    border: 1px solid rgba(212,175,55,0.12);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+    animation: modalZoom 0.35s ease;
+}
+.modal-content::-webkit-scrollbar {
+    width: 7px;
+}
+.modal-content::-webkit-scrollbar-thumb {
+    background: #d4af37;
+    border-radius: 20px;
+}
+.modal-close {
+    position: absolute;
+    top: 22px;
+    right: 24px;
+    font-size: 1.5rem;
+    color: #222;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.modal-close:hover {
+    color: #d4af37;
+    transform: rotate(90deg);
+}
+.modal-content h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 35px;
+    letter-spacing: 1px;
+}
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+.full-width {
+    grid-column: 1 / -1;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    color: #444;
+
+    margin-bottom: 10px;
+
+    letter-spacing: 0.5px;
+}
+.form-group input,
+.form-group textarea,
+.form-group select,
+.form-select,
+.form-control {
+    width: 100%;
+    border: 1px solid #e1e1e1;
+    background: #fff;
+    border-radius: 14px;
+    padding: 14px 16px;
+    font-size: 0.96rem;
+    color: #222;
+    outline: none;
+    transition: 0.3s;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus,
+.form-select:focus,
+.form-control:focus {
+    border-color: #d4af37;
+    box-shadow: 0 0 0 4px rgba(212,175,55,0.12);
+}
+.form-group textarea {
+    min-height: 130px;
+    resize: vertical;
+    line-height: 1.8;
+}
+.save-btn {
+    margin-top: 35px;
+    width: 100%;
+    height: 54px;
+    border: none;
+    border-radius: 16px;
+    background:
+        linear-gradient(
+            135deg,
+            #d4af37,
+            #f1d48b
+        );
+    color: #111;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.35s ease;
+}
+.save-btn:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 12px 24px rgba(212,175,55,0.28);
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes modalZoom {
+    from {
+        opacity: 0;
+        transform: scale(0.92) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+@media (max-width: 768px) {
+    .modal {
+        padding: 18px;
+    }
+    .modal-content {
+        padding: 35px 24px;
+        border-radius: 22px;
+    }
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+    .modal-content h3 {
+        font-size: 1.6rem;
+    }
+    .save-btn {
+        height: 50px;
+    }
+}
+@media (max-width: 500px) {
+    .modal-content {
+        padding: 30px 18px;
+    }
+    .modal-close {
+        top: 14px;
+        right: 14px;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        font-size: 0.92rem;
+    }
+}
+.tab-panel{
+    display: none;
+}
+.tab-panel.active{
+    display: block;
+}
+@media(max-width:1100px){
+    .profile-container{
+        grid-template-columns: 1fr;
+    }
+    .profile-header{
+        grid-template-columns: 1fr;
+    }
+}
+@media(max-width:768px){
+    .profile-grid{
+        grid-template-columns: 1fr;
+    }
+    .full-width{
+        grid-column: span 1;
+    }
+    .profile-card,
+    .password-card,
+    .order-table-wrapper{
+        padding: 25px;
+    }
+    .order-table{
+        display: block;
+        overflow-x: auto;
+    }
+}
+.custom-toast{
+    background:#fff;
+    border:none;
+    border-radius:14px;
+    min-width:320px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.12);
+}
+.custom-toast .toast-body{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    padding:16px;
+}
+.custom-toast .toast-icon{
+    font-size:24px;
+    line-height:1;
+}
+.custom-toast.success .toast-icon{
+    color:#198754;
+}
+.custom-toast.error .toast-icon{
+    color:#dc3545;
+}
+.custom-toast .toast-title{
+    font-weight:600;
+    color:#222;
+    margin-bottom:4px;
+}
+.custom-toast .toast-message{
+    font-size:14px;
+    color:#666;
+}

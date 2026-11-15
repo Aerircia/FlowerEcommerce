@@ -1,0 +1,221 @@
+@import "STYLE.css";
+.contact-section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 40px;
+    background:url("../img/contact.jpg") center/cover no-repeat;
+}
+.contact-wrapper{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1300px;
+    display: grid;
+    grid-template-columns: 0.9fr 1.2fr;
+    gap: 90px;
+    padding: 70px;
+    border: 1px solid rgba(212,175,55,0.12);
+    border-radius: 34px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    background: #fff;
+}
+.contact-wrapper::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+        83deg,
+        #f8f8f8 30%,
+        #f8f8f8 45%,
+        #ffffff 30%,
+        #ffffff 100%
+        );
+    z-index: 0;
+}
+.contact-header,
+.contact-form{
+    z-index: 2;
+}
+.contact-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+.contact-header h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+}
+.contact-header p {
+    font-size: 1rem;
+    line-height: 1.9;
+    color: #666;
+    max-width: 420px;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #d9d9d9;
+    background: transparent;
+    padding: 14px 0;
+    font-size: 1rem;
+    color: #111;
+    outline: none;
+    transition: 0.3s;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #999;
+    font-weight: 300;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #d4af37;
+}
+.contact-form textarea {
+    min-height: 140px;
+    resize: none;
+    line-height: 1.8;
+}
+.submit-btn {
+    width: fit-content;
+    padding: 14px 42px;
+    border: none;
+    border-radius: 999px;
+    background:
+        linear-gradient(
+        135deg,
+        #d4af37,
+        #f1d48b
+        );
+    color: #111;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.35s;
+}
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(212,175,55,0.28);
+}
+@media (max-width: 992px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        padding: 55px 40px;
+    }
+    .contact-header h2 {
+        font-size: 2.4rem;
+    }
+}
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 50px 20px;
+    }
+    .contact-wrapper{
+        grid-template-columns: 1fr;
+        gap: 50px;
+        padding: 40px 30px;
+    }
+    .contact-wrapper::before{
+        background:
+            linear-gradient(
+            180deg,
+            #fafafa 0%,
+            #fcfcfc 45%,
+            #ffffff 45.3%,
+            #ffffff 100%
+            );
+    }
+    .contact-wrapper::after{
+        width: 100%;
+        height: 2px;
+        top: 42%;
+        left: 0;
+        transform: none;
+    }
+    .contact-header h2 {
+        font-size: 2rem;
+    }
+    .submit-btn {
+        width: 100%;
+    }
+}
+@media (max-width: 480px) {
+    .contact-header h2 {
+        font-size: 1.7rem;
+    }
+    .contact-header p {
+        font-size: 0.92rem;
+    }
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.92rem;
+    }
+}
+.contact-wrapper.success-state,
+.contact-wrapper.error-state {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+}
+.response-box {
+    text-align: center;
+    animation: fadeUp 0.5s ease;
+    z-index: 2 !important;
+}
+.response-box i {
+    font-size: 5rem;
+    margin-bottom: 25px;
+}
+.response-box.success i {
+    color: #d4af37;
+}
+.response-box.error i {
+    color: #dc3545;
+}
+.response-box h3 {
+    font-size: 2rem;
+    margin-bottom: 14px;
+    color: #111;
+}
+.response-box p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+.submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.submit-btn.loading {
+    opacity: 0.8;
+    pointer-events: none;
+}
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
